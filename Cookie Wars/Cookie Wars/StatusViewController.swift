@@ -20,6 +20,7 @@ class StatusViewController: UIViewController {
     var statusModel:StatusViewModel = StatusViewModel(state:AppState.LoggedOut)
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.barGraphConstraint.constant = self.neededCommitmentsBar.frame.size.width * self.statusModel.barFraction
         self.neededCommitmentsBar.backgroundColor = self.statusModel.targetBarColor
         self.targetLabel.text = self.statusModel.targetLabelText
