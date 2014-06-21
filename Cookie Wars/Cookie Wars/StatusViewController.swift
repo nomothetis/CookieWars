@@ -29,12 +29,14 @@ class StatusViewController: UIViewController {
         self.currentLabel.alpha = self.statusModel.currentLabelAlpha
     }
     
-    @IBAction func toggleLoginState() {
+    @IBAction func toggleLoginState(button:UIButton) {
         switch self.statusModel.state {
         case .LoggedOut:
             self.statusModel = self.statusModel.login()
+            button.selected = true
         case .LoggedIn:
             self.statusModel = self.statusModel.logout()
+            button.selected = false
         }
         
         UIView.animateWithDuration(0.25, animations: {

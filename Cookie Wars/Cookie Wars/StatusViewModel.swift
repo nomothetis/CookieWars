@@ -30,6 +30,7 @@ struct StatusViewModel {
     let targetLabelAlpha:CGFloat
     let currentLabelAlpha:CGFloat
     let titleLabelText:String
+    let toggleLogButtonText:String
     //let lgin:(() -> StatusViewModel)
     //let lgout:() -> StatusViewModel
     
@@ -44,6 +45,7 @@ struct StatusViewModel {
             self.barFraction = 0
             self.targetBarColor = UIColor(hue: 22.0 / 359.0, saturation: 0.0, brightness: 0.60, alpha: 1.0)
             self.titleLabelText = "Logged Out"
+            self.toggleLogButtonText = "Log In"
         case .LoggedIn(let sellerData):
             self.targetLabelText = String(sellerData.salesTarget)
             self.targetLabelAlpha = 1.0
@@ -52,6 +54,7 @@ struct StatusViewModel {
             self.barFraction = CGFloat(sellerData.salesToDate) / CGFloat(sellerData.salesTarget)
             self.targetBarColor = UIColor(hue: 22.0 / 359.0, saturation: 1.0, brightness: 0.95, alpha: 1.0)
             self.titleLabelText = sellerData.name
+            self.toggleLogButtonText = "Log Out"
         }
     }
     
