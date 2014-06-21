@@ -33,7 +33,7 @@ class StatusViewController: UIViewController {
         switch self.statusModel.state {
         case .LoggedOut:
             self.statusModel = self.statusModel.login()
-        case .LoggedIn(_):
+        case .LoggedIn:
             self.statusModel = self.statusModel.logout()
         }
         

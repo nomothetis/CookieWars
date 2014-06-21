@@ -30,6 +30,8 @@ struct StatusViewModel {
     let targetLabelAlpha:CGFloat
     let currentLabelAlpha:CGFloat
     let titleLabelText:String
+    //let lgin:(() -> StatusViewModel)
+    //let lgout:() -> StatusViewModel
     
     init(state:AppState) {
         self.state = state
